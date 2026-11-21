@@ -1,0 +1,588 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Kazakh History</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: app header, offline banner, then content (tabs) beside a sticky "PWA lab" card; stacks with the lab first on phones. */
+:root{
+  --bg:#EDF2F5; --surface:#FFFFFF; --surface2:#F4F8FA; --ink:#0E2433; --muted:#4F6575; --line:#D3DEE5;
+  --accent:#066F8A; --sky:#0A8FB0; --on-accent:#FFFFFF; --gold:#D9980F; --gold-soft:#FBF0CC;
+  --ok:#1B7A4B; --warn:#9A4A12; --warn-bg:#FCE9D6; --danger:#B3372F; --danger-bg:#FBE3E1;
+  --shadow:0 1px 2px rgba(14,36,51,.06),0 6px 20px rgba(14,36,51,.06);
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-display:"Noto Serif",Georgia,"Times New Roman",serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#08151D; --surface:#0F2530; --surface2:#14303D; --ink:#E7F1F6; --muted:#9DB5C2; --line:#23414F;
+  --accent:#4CC3E0; --sky:#4CC3E0; --on-accent:#05202B; --gold:#F0B93A; --gold-soft:#3A3118;
+  --ok:#5BD08F; --warn:#F3A25E; --warn-bg:#3A2616; --danger:#F27D7D; --danger-bg:#3C1D1D;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#08151D; --surface:#0F2530; --surface2:#14303D; --ink:#E7F1F6; --muted:#9DB5C2; --line:#23414F;
+  --accent:#4CC3E0; --sky:#4CC3E0; --on-accent:#05202B; --gold:#F0B93A; --gold-soft:#3A3118;
+  --ok:#5BD08F; --warn:#F3A25E; --warn-bg:#3A2616; --danger:#F27D7D; --danger-bg:#3C1D1D;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 6px 20px rgba(0,0,0,.35); color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto}
+
+/* header */
+header.app{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-block:16px}
+header.app .brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1 1 260px}
+header.app svg.icon{width:44px;height:44px;flex:none;border-radius:11px}
+h1{font-family:var(--font-display);font-size:22px;line-height:1.2;margin:0;text-wrap:balance}
+.tag{margin:2px 0 0;color:var(--muted);font-size:13px;max-width:52ch}
+.hdr-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden}
+.seg button{border:0;background:none;padding:7px 12px;font-weight:600;font-size:13px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:600}
+.pill i{width:9px;height:9px;border-radius:50%;background:var(--ok)}
+.pill.off i{background:var(--warn)}
+.banner{display:flex;gap:10px;align-items:center;background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn);border-radius:12px;padding:10px 14px;font-weight:600;font-size:14px;margin-bottom:16px}
+
+/* layout */
+.layout{display:grid;gap:20px;grid-template-columns:minmax(0,1fr)}
+.lab{order:-1}
+@media (min-width:920px){.layout{grid-template-columns:minmax(0,1fr) 370px;align-items:start}.lab{order:0;position:sticky;top:16px}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.main{padding:18px}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin:-4px -4px 18px;padding:0 4px 12px;flex-wrap:wrap}
+.tabs button{border:1px solid transparent;background:none;padding:8px 16px;border-radius:10px;font-weight:600;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface2);border-color:var(--line);color:var(--ink)}
+
+/* timeline */
+.tl{margin:0;padding:0 0 0 22px;list-style:none;border-left:2px solid var(--line);margin-left:6px;display:grid;gap:20px}
+.tl li{position:relative;min-width:0}
+.tl li::before{content:"";position:absolute;left:-30px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:3px solid var(--surface);box-shadow:0 0 0 2px var(--gold)}
+.yr{font-family:var(--font-mono);font-size:13px;font-weight:500;color:var(--warn);letter-spacing:.02em}
+:root[data-theme="dark"] .yr{color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .yr{color:var(--gold)}}
+.tl h3,.fig h3{font-family:var(--font-display);font-size:18px;margin:2px 0 4px;line-height:1.3}
+.tl p,.fig p{margin:0;color:var(--muted);max-width:62ch}
+
+/* figures */
+.figs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.fig{background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.mono{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:20px;background:var(--gold-soft);color:var(--ink);border:1px solid var(--gold)}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);justify-self:start}
+.life{font-family:var(--font-mono);font-size:12.5px;color:var(--muted)}
+
+/* quiz */
+.quiz{display:grid;gap:14px;max-width:620px}
+.quiz .meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:13px;font-weight:600}
+.quiz h3{font-family:var(--font-display);font-size:20px;margin:0;line-height:1.35}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface2);font-weight:500}
+.opt:hover:not(:disabled){border-color:var(--sky)}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,var(--surface))}
+.opt.wrong{border-color:var(--danger);background:var(--danger-bg)}
+.fb{font-weight:600;min-height:1.5em}
+.fb.ok{color:var(--ok)}.fb.bad{color:var(--danger)}
+
+.btn{border:1.5px solid var(--line);background:var(--surface);padding:9px 16px;border-radius:10px;font-weight:600;font-size:14px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#241A02}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.small{padding:5px 10px;font-size:12.5px}
+
+/* states */
+.skel{display:grid;gap:12px}
+.skel i{display:block;height:16px;border-radius:6px;background:linear-gradient(90deg,var(--line),var(--surface2),var(--line));background-size:200% 100%;animation:sh 1.1s linear infinite}
+@keyframes sh{to{background-position:-200% 0}}
+.fail{display:grid;gap:10px;justify-items:start;padding:22px;border:1.5px dashed var(--warn);border-radius:14px;background:var(--warn-bg);color:var(--ink)}
+.fail h3{margin:0;font-family:var(--font-display);color:var(--warn)}
+.fail p{margin:0;max-width:52ch}
+
+/* lab */
+.lab-in{padding:16px;display:grid;gap:18px}
+.lab h2{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0}
+.block{display:grid;gap:10px}
+.block h3{margin:0;font-size:16px}
+.block p{margin:0;color:var(--muted);font-size:13.5px}
+.block+.block{border-top:1px solid var(--line);padding-top:16px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--sky);transition:width .35s}
+.switch{display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:600;font-size:14px}
+.switch input{position:absolute;opacity:0;width:1px;height:1px}
+.switch .trk{width:42px;height:24px;border-radius:99px;background:var(--line);position:relative;flex:none;transition:background .2s}
+.switch .trk::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.35);transition:transform .2s}
+.switch input:checked+.trk{background:var(--warn)}
+.switch input:checked+.trk::after{transform:translateX(18px)}
+.switch input:focus-visible+.trk{outline:3px solid var(--sky);outline-offset:2px}
+.entries{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13px}
+.entries li{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;background:var(--surface2);border-radius:8px;border:1px solid var(--line)}
+.entries code,.log code,pre{font-family:var(--font-mono)}
+.entries span:last-child{color:var(--muted)}
+.log{list-style:none;margin:0;padding:0;display:grid;gap:5px;font-size:12px;max-height:190px;overflow:auto}
+.log li{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:5px 8px;border-radius:8px;background:var(--surface2)}
+.log time{color:var(--muted);font-family:var(--font-mono)}
+.log code{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.src{font-weight:700;font-size:10.5px;letter-spacing:.05em;padding:2px 7px;border-radius:6px}
+.src.network{background:color-mix(in srgb,var(--sky) 22%,var(--surface));color:var(--accent)}
+.src.cache{background:var(--gold-soft);color:var(--warn)}
+:root[data-theme="dark"] .src.cache{color:var(--gold)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .src.cache{color:var(--gold)}}
+.src.fail{background:var(--danger-bg);color:var(--danger)}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:13px}
+.checks li::before{content:"✓";color:var(--ok);font-weight:700;margin-right:8px}
+.note{font-size:12.5px;color:var(--muted);margin:0}
+details summary{cursor:pointer;font-weight:600;font-size:14px}
+pre{margin:8px 0 0;padding:12px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-size:11.5px;line-height:1.5;overflow-x:auto;white-space:pre}
+
+/* home screen mock */
+.home{border-radius:18px;padding:14px;background:linear-gradient(160deg,#0A8FB0,#0E2433);display:grid;gap:12px;color:#fff}
+.home .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center}
+.home .app{display:grid;gap:4px;justify-items:center;font-size:11px;background:none;border:0;color:#fff;padding:0;min-width:0}
+.home .app span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home .ph{width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.22)}
+.home svg{width:44px;height:44px;border-radius:11px}
+.home .app.new svg{box-shadow:0 0 0 3px #FFD76A;animation:pop .6s ease-out}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.home small{opacity:.85;text-align:center}
+
+/* overlays */
+.scrim{position:fixed;inset:0;background:rgba(5,16,24,.62);display:grid;place-items:center;padding:16px;z-index:40}
+.sheet{width:min(380px,100%);background:var(--surface);border-radius:20px;padding:22px;display:grid;gap:14px;box-shadow:0 20px 60px rgba(0,0,0,.45);border:1px solid var(--line)}
+.sheet .top{display:flex;gap:14px;align-items:center}
+.sheet svg{width:60px;height:60px;border-radius:14px;flex:none}
+.sheet h2{font-family:var(--font-display);font-size:18px;margin:0;line-height:1.3}
+.sheet .url{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.sheet p{margin:0;color:var(--muted)}
+.sheet .row{justify-content:flex-end}
+.phone{width:min(390px,100%);height:min(760px,100%);background:var(--bg);border-radius:34px;border:8px solid #111;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.sbar{display:flex;justify-content:space-between;padding:8px 18px;font-size:12px;font-weight:700;background:var(--sky);color:#fff;flex:none}
+.splash{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:14px;background:#0E2433;color:#fff;z-index:2;text-align:center;font-family:var(--font-display);font-size:18px;transition:opacity .4s}
+.splash svg{width:84px;height:84px;border-radius:20px}
+.splash.gone{opacity:0;pointer-events:none}
+.sapp{padding:14px;overflow:auto;flex:1;display:grid;gap:14px;align-content:start}
+.sapp header{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.sapp h2{font-family:var(--font-display);font-size:19px;margin:0}
+.stl{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.stl li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.stl b{display:block;font-family:var(--font-display);font-size:15px}
+.hint{font-size:12px;color:var(--muted);text-align:center;padding:8px 14px 12px;flex:none}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="app">
+    <div class="brand">
+      <span id="hdrIcon"></span>
+      <div>
+        <h1 id="appTitle"></h1>
+        <p class="tag" id="appTag"></p>
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="seg" role="group" aria-label="Language" id="langSeg">
+        <button type="button" data-l="kk" aria-pressed="false">KZ</button>
+        <button type="button" data-l="ru" aria-pressed="false">RU</button>
+        <button type="button" data-l="en" aria-pressed="true">EN</button>
+      </div>
+      <span class="pill" id="netPill"><i></i><span id="netTxt"></span></span>
+    </div>
+  </header>
+
+  <div class="banner" id="banner" role="status" hidden></div>
+
+  <div class="layout">
+    <main class="card main">
+      <div class="tabs" role="tablist" id="tabs">
+        <button type="button" role="tab" id="tab-tl" data-tab="tl" aria-selected="true"></button>
+        <button type="button" role="tab" id="tab-fg" data-tab="fg" aria-selected="false"></button>
+        <button type="button" role="tab" id="tab-qz" data-tab="qz" aria-selected="false"></button>
+      </div>
+      <div id="view" role="tabpanel" aria-live="polite"></div>
+    </main>
+
+    <aside class="card lab" aria-label="PWA lab">
+      <div class="lab-in">
+        <h2 id="labTitle"></h2>
+
+        <section class="block" id="offBlock">
+          <h3 id="offTitle"></h3>
+          <p id="offDesc"></p>
+          <div class="row">
+            <button type="button" class="btn primary" id="saveBtn"></button>
+            <button type="button" class="btn small" id="clearBtn"></button>
+          </div>
+          <div class="bar" aria-hidden="true"><i id="saveBar"></i></div>
+          <label class="switch" for="simSwitch">
+            <input type="checkbox" id="simSwitch" role="switch">
+            <span class="trk"></span><span id="simLabel"></span>
+          </label>
+          <p id="simHint"></p>
+          <div>
+            <p class="note" id="cacheTitle" style="font-weight:600;margin-bottom:6px"></p>
+            <ul class="entries" id="entries"></ul>
+          </div>
+        </section>
+
+        <section class="block" id="insBlock">
+          <h3 id="insTitle"></h3>
+          <p id="insDesc"></p>
+          <div class="row"><button type="button" class="btn gold" id="installBtn"></button></div>
+          <div id="homeWrap" hidden></div>
+        </section>
+
+        <section class="block">
+          <h3 id="logTitle"></h3>
+          <ul class="log" id="log" role="log"></ul>
+          <p class="note" id="strategy"></p>
+        </section>
+
+        <section class="block">
+          <details>
+            <summary id="codeTitle"></summary>
+            <ul class="checks" id="checks" style="margin-top:10px"></ul>
+            <pre id="manifestCode"></pre>
+            <pre id="swCode"></pre>
+            <p class="note" id="simNote" style="margin-top:10px"></p>
+          </details>
+        </section>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div id="overlay"></div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- icon ---------- */
+function iconSVG(){
+  var rays="";
+  for(var i=0;i<16;i++){
+    var a=i*Math.PI/8,c=Math.cos(a),s=Math.sin(a);
+    rays+='<line x1="'+(32+13*c).toFixed(1)+'" y1="'+(28+13*s).toFixed(1)+'" x2="'+(32+19*c).toFixed(1)+'" y2="'+(28+19*s).toFixed(1)+'" stroke="#F4C542" stroke-width="2.4" stroke-linecap="round"/>';
+  }
+  return '<svg class="icon" viewBox="0 0 64 64" role="img" aria-label="App icon"><rect width="64" height="64" rx="14" fill="#0A8FB0"/>'+rays+'<circle cx="32" cy="28" r="9" fill="#F4C542"/><path d="M0 52 Q16 44 32 50 T64 48 V64 H0Z" fill="#0E2433"/></svg>';
+}
+
+/* ---------- content (what the "server" sends) ---------- */
+var SERVER={
+ timeline:[
+  {y:"1465",en:{t:"The Kazakh Khanate is founded",d:"Sultans Kerei and Janibek lead their people away from Abulkhair's rule and found the Kazakh Khanate in Zhetysu."},ru:{t:"Основание Казахского ханства",d:"Султаны Керей и Жанибек увели племена от хана Абулхаира и основали Казахское ханство в Семиречье."},kk:{t:"Қазақ хандығының құрылуы",d:"Керей мен Жәнібек сұлтандар тайпаларды Әбілқайыр хандығынан бөліп алып, Жетісуда Қазақ хандығын құрды."}},
+  {y:"1511–1521",en:{t:"Kasym Khan",d:"Kasym Khan brings the Kazakh lands together and is remembered for the code of laws \"Kasym Khan's Bright Road\"."},ru:{t:"Касым-хан",d:"Касым-хан объединил казахские земли и известен сводом законов «Касым ханның қасқа жолы» («Светлый путь Касым-хана»)."},kk:{t:"Қасым хан",d:"Қасым хан қазақ жерлерін біріктіріп, «Қасым ханның қасқа жолы» заңдар жинағымен танылды."}},
+  {y:"c. 1700",en:{t:"Tauke Khan and the Zhety Zhargy",d:"Tauke Khan unites the three zhuzes and issues the code of laws known as the Zhety Zhargy, the Seven Charters."},ru:{t:"Тауке-хан и «Жеты жаргы»",d:"Тауке-хан объединил три жуза и издал свод законов «Жеты жаргы» («Семь установлений»)."},kk:{t:"Тәуке хан және «Жеті жарғы»",d:"Тәуке хан үш жүзді біріктіріп, «Жеті жарғы» заңдар жинағын шығарды."}},
+  {y:"1731",en:{t:"The Junior Zhuz seeks Russian protection",d:"The Junior Zhuz, led by Abulkhair Khan, accepts Russian protection. It is the first step of a long process of joining the Russian Empire."},ru:{t:"Младший жуз под покровительством России",d:"Младший жуз во главе с ханом Абулхаиром принял российское покровительство. Это начало долгого процесса присоединения."},kk:{t:"Кіші жүз Ресейдің қарамағына",d:"Әбілқайыр хан бастаған Кіші жүз Ресейдің қарамағына кіруді қабылдады. Бұл ұзақ қосылу үдерісінің басы болды."}},
+  {y:"1837–1847",en:{t:"Kenesary's uprising",d:"Kenesary Kasymov leads one of the largest uprisings against Russian expansion in the steppe."},ru:{t:"Восстание Кенесары",d:"Кенесары Касымов возглавил одно из крупнейших восстаний против российской экспансии."},kk:{t:"Кенесары көтерілісі",d:"Кенесары Қасымұлы Ресейдің кеңеюіне қарсы ең ірі көтерілістердің бірін басқарды."}},
+  {y:"1858–1859",en:{t:"Shokan travels to Kashgar",d:"Shokan Ualikhanov reaches Kashgar disguised as a merchant and brings back rare notes about the region."},ru:{t:"Поездка Шокана в Кашгар",d:"Шокан Уалиханов под видом купца добрался до Кашгара и оставил уникальные записи о регионе."},kk:{t:"Шоқанның Қашғар сапары",d:"Шоқан Уәлиханов көпес кейпінде Қашғарға барып, өлке туралы бірегей жазбалар қалдырды."}},
+  {y:"1936",en:{t:"Kazakh SSR",d:"Kazakhstan becomes a full union republic of the Soviet Union."},ru:{t:"Казахская ССР",d:"Казахстан стал полноправной союзной республикой СССР."},kk:{t:"Қазақ КСР",d:"Қазақстан Кеңес Одағының толыққанды одақтас республикасына айналды."}},
+  {y:"1991",en:{t:"Independence",d:"On 16 December Kazakhstan declares its independence."},ru:{t:"Независимость",d:"16 декабря Казахстан провозгласил независимость."},kk:{t:"Тәуелсіздік",d:"16 желтоқсанда Қазақстан өз тәуелсіздігін жариялады."}}
+ ],
+ figures:[
+  {y:"c. 1223–1277",m:{en:"B",ru:"Б",kk:"Б"},en:{n:"Baibars",r:"Sultan of Egypt",d:"Born on the Kipchak steppe. He rose to command the Mamluk army, fought at Ain Jalut in 1260 and ruled Egypt as sultan from 1260 to 1277."},ru:{n:"Бейбарс",r:"Султан Египта",d:"Родился в Кипчакской степи. Стал командиром мамлюкского войска, участвовал в битве при Айн-Джалуте в 1260 году и правил Египтом как султан в 1260–1277 годах."},kk:{n:"Бейбарыс",r:"Мысыр сұлтаны",d:"Дешті Қыпшақта туған. Мәмлүк әскерінің қолбасшысы болып, 1260 жылы Айн-Жалут шайқасына қатысты, кейін 1260–1277 жылдары Мысырды сұлтан ретінде басқарды."}},
+  {y:"1711–1781",m:{en:"A",ru:"А",kk:"А"},en:{n:"Abylai Khan",r:"Khan of the Middle Zhuz",d:"A commander against the Dzungars and a ruler who balanced diplomacy between the Russian Empire and Qing China."},ru:{n:"Абылай-хан",r:"Хан Среднего жуза",d:"Полководец, воевавший с джунгарами, и правитель, который вёл осторожную дипломатию между Российской империей и империей Цин."},kk:{n:"Абылай хан",r:"Орта жүздің ханы",d:"Жоңғарларға қарсы күрескен қолбасшы, Ресей империясы мен Цин империясы арасында сақ дипломатия жүргізген билеуші."}},
+  {y:"c. 1802–1847",m:{en:"K",ru:"К",kk:"К"},en:{n:"Kenesary Kasymov",r:"Last khan of the Kazakhs",d:"Grandson of Abylai. He led the uprising of 1837–1847 against Russian expansion and was elected khan in 1841."},ru:{n:"Кенесары Касымов",r:"Последний хан казахов",d:"Внук Абылая. Возглавил восстание 1837–1847 годов против российской экспансии, в 1841 году был избран ханом."},kk:{n:"Кенесары Қасымұлы",r:"Соңғы қазақ ханы",d:"Абылайдың немересі. 1837–1847 жылдары Ресей экспансиясына қарсы көтерілісті басқарды, 1841 жылы хан сайланды."}},
+  {y:"1835–1865",m:{en:"S",ru:"Ш",kk:"Ш"},en:{n:"Shokan Ualikhanov",r:"Scholar, ethnographer, traveller",d:"He travelled to Kashgar, wrote down parts of the Kyrgyz epic Manas and died at only 29."},ru:{n:"Шокан Уалиханов",r:"Учёный, этнограф, путешественник",d:"Побывал в Кашгаре, записал отрывки кыргызского эпоса «Манас» и умер в 29 лет."},kk:{n:"Шоқан Уәлиханов",r:"Ғалым, этнограф, саяхатшы",d:"Қашғарға барып қайтты, қырғыз эпосы «Манастың» үзінділерін жазып алды және небәрі 29 жасында қайтыс болды."}}
+ ],
+ quiz:[
+  {a:0,q:{en:"In which year was the Kazakh Khanate traditionally founded?",ru:"В каком году традиционно основано Казахское ханство?",kk:"Қазақ хандығы дәстүрлі түрде қай жылы құрылды?"},o:[{en:"1465",ru:"1465",kk:"1465"},{en:"1218",ru:"1218",kk:"1218"},{en:"1731",ru:"1731",kk:"1731"}]},
+  {a:1,q:{en:"Who led the uprising of 1837–1847?",ru:"Кто возглавил восстание 1837–1847 годов?",kk:"1837–1847 жылдардағы көтерілісті кім басқарды?"},o:[{en:"Abylai Khan",ru:"Абылай-хан",kk:"Абылай хан"},{en:"Kenesary Kasymov",ru:"Кенесары Касымов",kk:"Кенесары Қасымұлы"},{en:"Tauke Khan",ru:"Тауке-хан",kk:"Тәуке хан"}]},
+  {a:2,q:{en:"Who was Shokan Ualikhanov?",ru:"Кем был Шокан Уалиханов?",kk:"Шоқан Уәлиханов кім болған?"},o:[{en:"A Mamluk sultan",ru:"Мамлюкским султаном",kk:"Мәмлүк сұлтаны"},{en:"Khan of the Middle Zhuz",ru:"Ханом Среднего жуза",kk:"Орта жүздің ханы"},{en:"A scholar, ethnographer and traveller",ru:"Учёным, этнографом и путешественником",kk:"Ғалым, этнограф, саяхатшы"}]},
+  {a:0,q:{en:"Baibars took part in which battle in 1260?",ru:"В какой битве 1260 года участвовал Бейбарс?",kk:"Бейбарыс 1260 жылы қай шайқасқа қатысты?"},o:[{en:"Ain Jalut",ru:"При Айн-Джалуте",kk:"Айн-Жалут"},{en:"Anyrakai",ru:"Аныракайской",kk:"Аңырақай"},{en:"Kalka River",ru:"На реке Калке",kk:"Қалқа өзені"}]},
+  {a:1,q:{en:"When did Kazakhstan declare independence?",ru:"Когда Казахстан провозгласил независимость?",kk:"Қазақстан тәуелсіздігін қашан жариялады?"},o:[{en:"25 October 1990",ru:"25 октября 1990",kk:"1990 жылғы 25 қазан"},{en:"16 December 1991",ru:"16 декабря 1991",kk:"1991 жылғы 16 желтоқсан"},{en:"30 August 1995",ru:"30 августа 1995",kk:"1995 жылғы 30 тамыз"}]}
+ ]
+};
+var NAMES=["timeline","figures","quiz"];
+
+/* ---------- UI strings ---------- */
+var T={
+en:{title:"Kazakh History",tag:"A study site on the history of Kazakhstan: timeline, key figures and short quizzes.",tl:"Timeline",fg:"Key figures",qz:"Quiz",online:"Online",offline:"Offline",
+ bannerSaved:"No signal. Showing the copy saved at {t}.",bannerNone:"No signal. Nothing is saved on this device yet.",
+ lab:"PWA lab",offTitle:"Offline functionality",offDesc:"Save the site once. It keeps working with no signal.",btnSave:"Save for offline",saving:"Saving…",saved:"Saved at {t}",needNet:"Go online to save",
+ sim:"Simulate no signal",simHint:"Turns the connection off for this demo. Your device's real connection also counts.",cacheTitle:"Saved on this device",cacheEmpty:"Nothing saved yet.",clear:"Clear saved data",
+ insTitle:"Installable to home screen",insDesc:"Add the site to your home screen. It opens full-screen like an app.",btnInstall:"Install app",installed:"Installed",open:"Open app",
+ sheetTitle:"Install Kazakh History?",sheetText:"Adds an icon to your home screen. Opens in its own window with no address bar.",add:"Install",cancel:"Not now",
+ homeTitle:"Your home screen",homeAdded:"Added just now. Tap the icon to open it.",standalone:"Full-screen, no browser bar",back:"Back to browser",
+ logTitle:"Request log",strategy:"Strategy: network first, saved copy when the network fails.",codeTitle:"Files behind it",
+ failTitle:"Not saved yet",failText:"You are offline and this section was never saved. Reconnect, then tap Save for offline.",failBtn:"Turn signal back on",
+ qOf:"Question {i} of {n}",score:"Score: {s}",right:"Correct!",wrong:"Not quite. Answer: {a}",next:"Next question",finish:"See result",result:"You scored {s} of {n}",again:"Try again",best:"Best score: {b}",
+ c1:"HTTPS: this page is served securely",c2:"Web app manifest: name, icons, colours",c3:"Service worker: network first, cache fallback (simulated here)",c4:"Icons: 192 and 512 px",
+ simNote:"In this preview the service worker and the install prompt are simulated. On your own host, sw.js and manifest.json do the same job."},
+ru:{title:"История Казахстана",tag:"Учебный сайт по истории Казахстана: хронология, ключевые личности и короткие викторины.",tl:"Хронология",fg:"Личности",qz:"Викторина",online:"Онлайн",offline:"Офлайн",
+ bannerSaved:"Нет сети. Показана копия, сохранённая в {t}.",bannerNone:"Нет сети. На этом устройстве пока ничего не сохранено.",
+ lab:"Лаборатория PWA",offTitle:"Работа офлайн",offDesc:"Сохраните сайт один раз. Он продолжит работать без сигнала.",btnSave:"Сохранить для офлайн",saving:"Сохраняю…",saved:"Сохранено в {t}",needNet:"Включите сеть, чтобы сохранить",
+ sim:"Имитировать отсутствие сети",simHint:"Отключает соединение для демо. Реальное соединение устройства тоже учитывается.",cacheTitle:"Сохранено на устройстве",cacheEmpty:"Пока ничего не сохранено.",clear:"Удалить сохранённое",
+ insTitle:"Установка на главный экран",insDesc:"Добавьте сайт на главный экран. Он откроется на весь экран, как приложение.",btnInstall:"Установить приложение",installed:"Установлено",open:"Открыть приложение",
+ sheetTitle:"Установить «Историю Казахстана»?",sheetText:"На главный экран добавится значок. Сайт откроется в отдельном окне, без адресной строки.",add:"Установить",cancel:"Не сейчас",
+ homeTitle:"Ваш главный экран",homeAdded:"Только что добавлено. Нажмите на значок, чтобы открыть.",standalone:"Во весь экран, без панели браузера",back:"Вернуться в браузер",
+ logTitle:"Журнал запросов",strategy:"Стратегия: сначала сеть, при сбое сохранённая копия.",codeTitle:"Файлы, на которых это держится",
+ failTitle:"Ещё не сохранено",failText:"Вы офлайн, а этот раздел не был сохранён. Включите сеть и нажмите «Сохранить для офлайн».",failBtn:"Включить сеть",
+ qOf:"Вопрос {i} из {n}",score:"Баллы: {s}",right:"Верно!",wrong:"Не совсем. Ответ: {a}",next:"Следующий вопрос",finish:"Показать результат",result:"Результат: {s} из {n}",again:"Пройти ещё раз",best:"Лучший результат: {b}",
+ c1:"HTTPS: страница отдаётся по защищённому соединению",c2:"Манифест веб-приложения: имя, значки, цвета",c3:"Service worker: сначала сеть, затем кэш (здесь имитация)",c4:"Значки: 192 и 512 px",
+ simNote:"В этом превью service worker и запрос на установку имитируются. На вашем хостинге ту же работу делают sw.js и manifest.json."},
+kk:{title:"Қазақстан тарихы",tag:"Қазақстан тарихы туралы оқу сайты: хронология, тұлғалар және қысқа викториналар.",tl:"Хронология",fg:"Тұлғалар",qz:"Викторина",online:"Желіде",offline:"Желіден тыс",
+ bannerSaved:"Желі жоқ. {t} уақытында сақталған көшірме көрсетіліп тұр.",bannerNone:"Желі жоқ. Бұл құрылғыда әлі ештеңе сақталмаған.",
+ lab:"PWA зертханасы",offTitle:"Офлайн жұмыс",offDesc:"Сайтты бір рет сақтаңыз. Желі болмағанда да жұмыс істей береді.",btnSave:"Офлайн режимге сақтау",saving:"Сақталуда…",saved:"{t} уақытында сақталды",needNet:"Сақтау үшін желіні қосыңыз",
+ sim:"Желі жоқ екенін имитациялау",simHint:"Демо үшін байланысты өшіреді. Құрылғының нақты байланысы да ескеріледі.",cacheTitle:"Құрылғыда сақталғандар",cacheEmpty:"Әзірге ештеңе сақталмаған.",clear:"Сақталған деректі өшіру",
+ insTitle:"Басты экранға орнату",insDesc:"Сайтты басты экранға қосыңыз. Ол қолданба сияқты толық экранда ашылады.",btnInstall:"Қолданбаны орнату",installed:"Орнатылды",open:"Қолданбаны ашу",
+ sheetTitle:"«Қазақстан тарихын» орнату керек пе?",sheetText:"Басты экранға белгіше қосылады. Мекенжай жолынсыз, жеке терезеде ашылады.",add:"Орнату",cancel:"Қазір емес",
+ homeTitle:"Сіздің басты экраныңыз",homeAdded:"Жаңа ғана қосылды. Ашу үшін белгішені басыңыз.",standalone:"Толық экран, браузер жолынсыз",back:"Браузерге оралу",
+ logTitle:"Сұраныстар журналы",strategy:"Тәсіл: алдымен желі, желі болмаса сақталған көшірме.",codeTitle:"Бұл қалай жұмыс істейді",
+ failTitle:"Әлі сақталмаған",failText:"Сіз желіден тыссыз, ал бұл бөлім сақталмаған. Желіні қосып, «Офлайн режимге сақтау» батырмасын басыңыз.",failBtn:"Желіні қайта қосу",
+ qOf:"{i}-сұрақ, барлығы {n}",score:"Ұпай: {s}",right:"Дұрыс!",wrong:"Дұрыс емес. Жауабы: {a}",next:"Келесі сұрақ",finish:"Нәтижені көру",result:"Нәтиже: {n} сұрақтың {s}-і дұрыс",again:"Қайта бастау",best:"Үздік нәтиже: {b}",
+ c1:"HTTPS: бет қауіпсіз байланыспен беріледі",c2:"Веб-қолданба манифесті: атауы, белгішелер, түстер",c3:"Service worker: алдымен желі, сосын кэш (мұнда имитация)",c4:"Белгішелер: 192 және 512 px",
+ simNote:"Бұл превьюде service worker мен орнату сұрауы имитацияланған. Өз хостингіңізде дәл осы жұмысты sw.js пен manifest.json атқарады."}
+};
+
+/* ---------- state + storage helpers ---------- */
+var LS_CACHE="khw-offline-cache-v1",LS_LANG="khw-lang",LS_BEST="khw-best";
+var mem={cache:null,best:null,lang:null};
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
+function readCache(){var r=lsGet(LS_CACHE);if(r){try{return JSON.parse(r)}catch(e){}}return mem.cache}
+function writeCache(o){mem.cache=o;lsSet(LS_CACHE,JSON.stringify(o))}
+function clearCache(){mem.cache=null;lsDel(LS_CACHE)}
+
+var state={lang:"en",tab:"tl",sim:false,saving:false,installed:false,deferred:null,log:[],seq:0,
+  quiz:{i:0,score:0,pick:null,done:false}};
+var savedLang=lsGet(LS_LANG)||mem.lang;if(savedLang&&T[savedLang])state.lang=savedLang;
+var best=parseInt(lsGet(LS_BEST),10);if(isNaN(best))best=mem.best;
+
+function t(k,v){var s=T[state.lang][k]||T.en[k]||k;if(v)s=s.replace(/\{(\w+)\}/g,function(m,x){return v[x]});return s}
+function $(id){return document.getElementById(id)}
+function sleep(ms){return new Promise(function(r){setTimeout(r,ms)})}
+function kb(o){return Math.max(.1,new Blob([JSON.stringify(o)]).size/1024)}
+function fmtKB(n){return n.toFixed(1)+" KB"}
+function clock(ts){return new Date(ts||Date.now()).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}
+function clockS(){return new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"})}
+function online(){return !state.sim&&navigator.onLine!==false}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+/* ---------- the "service worker": network first, saved copy as fallback ---------- */
+function addLog(path,src,size,note){
+  state.log.unshift({t:clockS(),path:path,src:src,size:size,note:note||""});
+  if(state.log.length>30)state.log.length=30;
+  paintLog();
+}
+async function fetchResource(name){
+  var path="GET /api/"+name;
+  if(online()){
+    await sleep(260);
+    addLog(path,"network",kb(SERVER[name]));
+    return SERVER[name];
+  }
+  await sleep(120);
+  var c=readCache(),hit=c&&c.items&&c.items[name];
+  if(hit){addLog(path,"cache",hit.kb);return hit.data}
+  addLog(path,"fail",0);
+  throw new Error("offline");
+}
+
+/* ---------- rendering: header + lab ---------- */
+function paintStatic(){
+  document.documentElement.lang=state.lang==="kk"?"kk":state.lang;
+  $("appTitle").textContent=t("title");$("appTag").textContent=t("tag");
+  document.title=t("title");
+  ["tl","fg","qz"].forEach(function(k){$("tab-"+k).textContent=t(k)});
+  $("labTitle").textContent=t("lab");$("offTitle").textContent=t("offTitle");$("offDesc").textContent=t("offDesc");
+  $("simLabel").textContent=t("sim");$("simHint").textContent=t("simHint");$("cacheTitle").textContent=t("cacheTitle");
+  $("clearBtn").textContent=t("clear");$("insTitle").textContent=t("insTitle");$("insDesc").textContent=t("insDesc");
+  $("logTitle").textContent=t("logTitle");$("strategy").textContent=t("strategy");$("codeTitle").textContent=t("codeTitle");
+  $("simNote").textContent=t("simNote");
+  $("checks").innerHTML=["c1","c2","c3","c4"].map(function(k){return"<li>"+esc(t(k))+"</li>"}).join("");
+  document.querySelectorAll("#langSeg button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===state.lang)});
+}
+function paintStatus(){
+  var on=online();
+  $("netPill").className="pill"+(on?"":" off");$("netTxt").textContent=on?t("online"):t("offline");
+  var b=$("banner"),c=readCache();
+  b.hidden=on;
+  if(!on)b.textContent=c?t("bannerSaved",{t:clock(c.savedAt)}):t("bannerNone");
+  $("simSwitch").checked=state.sim;
+}
+function paintLab(){
+  var c=readCache(),on=online();
+  var sb=$("saveBtn");
+  sb.disabled=state.saving||!on;
+  sb.textContent=state.saving?t("saving"):(!on?t("needNet"):(c?t("saved",{t:clock(c.savedAt)})+" · "+t("btnSave"):t("btnSave")));
+  $("clearBtn").disabled=!c;
+  var ul=$("entries");
+  if(c&&c.items){
+    ul.innerHTML=NAMES.map(function(n){var it=c.items[n];return it?'<li><code>/api/'+n+'</code><span>'+fmtKB(it.kb)+'</span></li>':""}).join("");
+  }else ul.innerHTML='<li><span>'+esc(t("cacheEmpty"))+'</span></li>';
+  var ib=$("installBtn");
+  ib.textContent=state.installed?t("open"):t("btnInstall");
+  var hw=$("homeWrap");
+  if(state.installed){
+    hw.hidden=false;
+    hw.innerHTML='<div class="home"><div class="grid">'+
+      '<div class="app"><div class="ph"></div><span>Phone</span></div>'+
+      '<div class="app"><div class="ph"></div><span>Maps</span></div>'+
+      '<div class="app"><div class="ph"></div><span>Photos</span></div>'+
+      '<div class="app"><div class="ph"></div><span>Music</span></div>'+
+      '<div class="app"><div class="ph"></div><span>Notes</span></div>'+
+      '<button type="button" class="app new" id="homeIcon" aria-label="'+esc(t("open")+": "+t("title"))+'">'+iconSVG()+'<span>'+esc(t("title"))+'</span></button>'+
+      '</div><small>'+esc(t("homeAdded"))+'</small></div>';
+    $("homeIcon").onclick=openStandalone;
+  }else{hw.hidden=true;hw.innerHTML=""}
+}
+function paintLog(){
+  var ul=$("log");
+  if(!state.log.length){ul.innerHTML="";return}
+  ul.innerHTML=state.log.slice(0,10).map(function(e){
+    var lab=e.src==="network"?"NETWORK":e.src==="cache"?"CACHE":"FAILED";
+    return'<li><time>'+e.t+'</time><code title="'+esc(e.path)+'">'+esc(e.path)+(e.size?" · "+fmtKB(e.size):"")+(e.note?" · "+esc(e.note):"")+'</code><span class="src '+e.src+'">'+lab+'</span></li>';
+  }).join("");
+}
+
+/* ---------- rendering: content ---------- */
+function skeleton(){$("view").innerHTML='<div class="skel" aria-hidden="true"><i style="width:40%"></i><i style="width:90%"></i><i style="width:75%"></i><i style="width:35%"></i><i style="width:85%"></i></div>'}
+function failView(){
+  var sim=state.sim;
+  $("view").innerHTML='<div class="fail"><h3>'+esc(t("failTitle"))+'</h3><p>'+esc(t("failText"))+'</p>'+(sim?'<button type="button" class="btn primary" id="failBtn">'+esc(t("failBtn"))+'</button>':"")+'</div>';
+  if(sim)$("failBtn").onclick=function(){setSim(false)};
+}
+function renderTimeline(d){
+  $("view").innerHTML='<ol class="tl">'+d.map(function(e){var x=e[state.lang];return'<li><span class="yr">'+esc(e.y)+'</span><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p></li>'}).join("")+"</ol>";
+}
+function renderFigures(d){
+  $("view").innerHTML='<div class="figs">'+d.map(function(f){var x=f[state.lang];return'<article class="fig"><div class="mono" aria-hidden="true">'+esc(f.m[state.lang])+'</div><div><h3>'+esc(x.n)+'</h3><span class="life">'+esc(f.y)+'</span></div><span class="chip">'+esc(x.r)+'</span><p>'+esc(x.d)+'</p></article>'}).join("")+"</div>";
+}
+function renderQuiz(d){
+  var q=state.quiz,n=d.length,v=$("view");
+  if(q.done){
+    v.innerHTML='<div class="quiz"><h3>'+esc(t("result",{s:q.score,n:n}))+'</h3><p class="fb">'+(best!=null?esc(t("best",{b:best+"/"+n})):"")+'</p><div><button type="button" class="btn primary" id="again">'+esc(t("again"))+'</button></div></div>';
+    $("again").onclick=function(){state.quiz={i:0,score:0,pick:null,done:false};renderQuiz(d)};
+    return;
+  }
+  var it=d[q.i],L=state.lang;
+  var opts=it.o.map(function(o,i){
+    var cls="opt";if(q.pick!=null){if(i===it.a)cls+=" right";else if(i===q.pick)cls+=" wrong"}
+    return'<button type="button" class="'+cls+'" data-i="'+i+'"'+(q.pick!=null?" disabled":"")+'>'+esc(o[L])+'</button>';
+  }).join("");
+  var fb="";
+  if(q.pick!=null)fb=q.pick===it.a?'<p class="fb ok">'+esc(t("right"))+'</p>':'<p class="fb bad">'+esc(t("wrong",{a:it.o[it.a][L]}))+'</p>';
+  else fb='<p class="fb"></p>';
+  v.innerHTML='<div class="quiz"><div class="meta"><span>'+esc(t("qOf",{i:q.i+1,n:n}))+'</span><span>'+esc(t("score",{s:q.score}))+'</span></div><h3>'+esc(it.q[L])+'</h3><div class="opts">'+opts+'</div>'+fb+
+    (q.pick!=null?'<div><button type="button" class="btn primary" id="nextQ">'+esc(q.i===n-1?t("finish"):t("next"))+'</button></div>':"")+"</div>";
+  v.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){
+    var i=+b.dataset.i;q.pick=i;if(i===it.a)q.score++;renderQuiz(d);
+  }});
+  var nx=$("nextQ");
+  if(nx)nx.onclick=function(){
+    if(q.i===n-1){q.done=true;if(best==null||q.score>best){best=q.score;mem.best=best;lsSet(LS_BEST,String(best))}}
+    else{q.i++;q.pick=null}
+    renderQuiz(d);
+  };
+}
+var lastData={};
+async function loadTab(quiet){
+  var mine=++state.seq,name={tl:"timeline",fg:"figures",qz:"quiz"}[state.tab];
+  if(!quiet)skeleton();
+  try{
+    var d=await fetchResource(name);
+    if(mine!==state.seq)return;
+    lastData[name]=d;
+    if(state.tab==="tl")renderTimeline(d);else if(state.tab==="fg")renderFigures(d);else renderQuiz(d);
+  }catch(e){if(mine===state.seq)failView()}
+}
+function rerenderLang(){
+  var name={tl:"timeline",fg:"figures",qz:"quiz"}[state.tab],d=lastData[name];
+  if(!d){loadTab();return}
+  if(state.tab==="tl")renderTimeline(d);else if(state.tab==="fg")renderFigures(d);else renderQuiz(d);
+}
+
+/* ---------- offline: save + simulate ---------- */
+async function saveOffline(){
+  if(!online()||state.saving)return;
+  state.saving=true;paintLab();
+  var items={},bar=$("saveBar");bar.style.width="0%";
+  for(var i=0;i<NAMES.length;i++){
+    await sleep(480);
+    var n=NAMES[i],size=kb(SERVER[n]);
+    items[n]={data:SERVER[n],kb:size};
+    addLog("GET /api/"+n,"network",size,"stored in cache");
+    bar.style.width=Math.round((i+1)/NAMES.length*100)+"%";
+  }
+  writeCache({savedAt:Date.now(),items:items});
+  state.saving=false;paintLab();paintStatus();
+  setTimeout(function(){bar.style.width="0%"},1400);
+}
+function setSim(v){
+  state.sim=!!v;paintStatus();paintLab();loadTab();
+}
+window.addEventListener("online",function(){paintStatus();paintLab();loadTab()});
+window.addEventListener("offline",function(){paintStatus();paintLab();loadTab()});
+
+/* ---------- install ---------- */
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();state.deferred=e});
+window.addEventListener("appinstalled",function(){state.installed=true;paintLab()});
+function installClick(){
+  if(state.installed){openStandalone();return}
+  if(state.deferred){
+    var p=state.deferred;state.deferred=null;
+    try{p.prompt();p.userChoice.then(function(r){if(r&&r.outcome==="accepted"){state.installed=true;paintLab()}})}catch(e){openSheet()}
+    return;
+  }
+  openSheet();
+}
+function openSheet(){
+  var ov=$("overlay");
+  ov.innerHTML='<div class="scrim" id="scrim"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="shT">'+
+    '<div class="top">'+iconSVG()+'<div><h2 id="shT">'+esc(t("sheetTitle"))+'</h2><div class="url">kazakh-history.example</div></div></div>'+
+    '<p>'+esc(t("sheetText"))+'</p><div class="row"><button type="button" class="btn" id="shNo">'+esc(t("cancel"))+'</button><button type="button" class="btn gold" id="shYes">'+esc(t("add"))+'</button></div></div></div>';
+  $("shYes").focus();
+  $("shNo").onclick=closeOverlay;
+  $("shYes").onclick=function(){state.installed=true;closeOverlay();paintLab();var h=$("homeIcon");if(h)h.focus()};
+  $("scrim").onclick=function(e){if(e.target.id==="scrim")closeOverlay()};
+}
+function closeOverlay(){$("overlay").innerHTML="";var b=$("installBtn");if(b)b.focus()}
+async function openStandalone(){
+  var ov=$("overlay");
+  ov.innerHTML='<div class="scrim" id="scrim"><div class="phone" role="dialog" aria-modal="true" aria-label="'+esc(t("title"))+'">'+
+   '<div class="splash" id="splash">'+iconSVG()+'<span>'+esc(t("title"))+'</span></div>'+
+   '<div class="sbar"><span>'+clock()+'</span><span id="sbNet"></span></div>'+
+   '<div class="sapp"><header><h2>'+esc(t("title"))+'</h2><button type="button" class="btn small" id="stBack">'+esc(t("back"))+'</button></header><ul class="stl" id="stl"></ul></div>'+
+   '<div class="hint">'+esc(t("standalone"))+'</div></div></div>';
+  $("stBack").onclick=closeOverlay;
+  $("sbNet").textContent=online()?"●●●● 5G":"○○○○ —";
+  setTimeout(function(){var s=$("splash");if(s)s.classList.add("gone")},900);
+  try{
+    var d=await fetchResource("timeline");
+    var ul=$("stl");if(ul)ul.innerHTML=d.slice(0,5).map(function(e){var x=e[state.lang];return'<li><span class="yr">'+esc(e.y)+'</span><b>'+esc(x.t)+'</b></li>'}).join("");
+  }catch(e){var ul2=$("stl");if(ul2)ul2.innerHTML='<li><b>'+esc(t("failTitle"))+'</b>'+esc(t("failText"))+'</li>'}
+  $("stBack").focus();
+}
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&$("overlay").innerHTML)closeOverlay()});
+
+/* ---------- code panels ---------- */
+$("manifestCode").textContent='// manifest.json\n{\n  "name": "Kazakh History",\n  "short_name": "KZ History",\n  "start_url": "/?source=pwa",\n  "display": "standalone",\n  "background_color": "#0E2433",\n  "theme_color": "#0A8FB0",\n  "icons": [\n    { "src": "/icons/192.png", "sizes": "192x192", "type": "image/png" },\n    { "src": "/icons/512.png", "sizes": "512x512", "type": "image/png" }\n  ]\n}';
+$("swCode").textContent="// sw.js\nconst CACHE = 'kazakh-history-v1';\nconst FILES = ['/', '/timeline', '/figures', '/quiz', '/app.js', '/style.css'];\n\nself.addEventListener('install', (event) => {\n  event.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)));\n});\n\nself.addEventListener('fetch', (event) => {\n  event.respondWith(\n    fetch(event.request).catch(() => caches.match(event.request))\n  );\n});";
+
+/* ---------- wiring ---------- */
+$("hdrIcon").innerHTML=iconSVG();
+document.querySelectorAll("#langSeg button").forEach(function(b){b.onclick=function(){
+  state.lang=b.dataset.l;mem.lang=state.lang;lsSet(LS_LANG,state.lang);paintStatic();paintStatus();paintLab();rerenderLang();
+}});
+document.querySelectorAll("#tabs button").forEach(function(b){b.onclick=function(){
+  state.tab=b.dataset.tab;
+  document.querySelectorAll("#tabs button").forEach(function(x){x.setAttribute("aria-selected",x===b)});
+  loadTab();
+}});
+$("saveBtn").onclick=saveOffline;
+$("clearBtn").onclick=function(){clearCache();paintLab();paintStatus();loadTab(true)};
+$("simSwitch").onchange=function(e){setSim(e.target.checked)};
+$("installBtn").onclick=installClick;
+
+paintStatic();paintStatus();paintLab();paintLog();loadTab();
+})();
+</script>
+
+</body></html>
